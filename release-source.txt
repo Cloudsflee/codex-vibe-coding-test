@@ -1,0 +1,12 @@
+Release rehearsal evidence
+
+Project objective: Verify source
+
+Source reviewed:
+- package.json defines the test command as `node --test`.
+- src/signal.mjs exports `signal` with the value `baseline`.
+- test/signal.test.mjs verifies that `signal` is exported as a string.
+
+Verification to run:
+- npm test
+- git diff -- release-source.txt
