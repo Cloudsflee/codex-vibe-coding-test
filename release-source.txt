@@ -1,0 +1,21 @@
+Release rehearsal evidence: source verification
+Date: 2026-08-06
+Workspace: /workspace
+
+Verified source:
+- package.json defines test script: node --test
+- src/signal.mjs exports signal as the string "baseline"
+- test/signal.test.mjs imports signal and asserts its type is string
+
+Execution evidence:
+- npm test: did not start; npm failed with ENOSPC while writing its log/cache.
+- node --test: passed.
+
+node --test result:
+- tests: 1
+- pass: 1
+- fail: 0
+- duration_ms: 76.267427
+
+Conclusion:
+Source verification completed using the underlying Node test runner.
