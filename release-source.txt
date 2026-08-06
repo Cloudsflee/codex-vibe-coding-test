@@ -1,0 +1,28 @@
+Release rehearsal evidence
+
+Objective: Verify source
+Date: 2026-08-06
+Workspace: /workspace
+
+Source reviewed:
+- package.json defines the test script as `node --test`.
+- src/signal.mjs exports `signal` with value `baseline`.
+- test/signal.test.mjs imports `signal` and asserts the export is a string.
+
+Execution evidence:
+- `npm test` attempted first and failed before test execution because npm could not write to `/tmp/codex-home/.npm`:
+  ENOSPC: no space left on device
+- Disk check showed `/tmp/codex-home` mounted as a 64.0M tmpfs at 100% usage, while `/workspace` had available space.
+- The underlying test command was run directly:
+  `node --test`
+
+Result:
+- PASS: 1 test passed, 0 failed.
+- Verified command output included:
+  `signal is exported`
+  `tests 1`
+  `pass 1`
+  `fail 0`
+
+Conclusion:
+- Source verification completed successfully via `node --test`.
