@@ -1,0 +1,15 @@
+Release rehearsal evidence
+
+Objective: Verify source
+Date: 2026-08-06
+
+Source reviewed:
+- package.json: test script is "node --test"
+- src/signal.mjs: exports signal as the string "baseline"
+- test/signal.test.mjs: verifies signal is exported as a string
+
+Verification to run:
+- npm_config_cache=/tmp/npm-cache npm test
+
+Result:
+- Passed: node --test completed with 1 test, 1 pass, 0 failures
