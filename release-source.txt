@@ -1,0 +1,7 @@
+Release rehearsal evidence
+
+Project objective: Verify source
+Verified source: src/signal.mjs
+Observed export: signal = "baseline"
+Verification command: node --test
+Expected result: test/signal.test.mjs confirms signal is exported as a string.
