@@ -1,0 +1,10 @@
+Release rehearsal evidence
+
+Project objective: Verify source
+
+Source verified:
+- src/signal.mjs exports signal = "baseline"
+
+Verification completed:
+- npm_config_cache=/tmp/npm-cache npm test
+- Result: pass (1 test passed)
